@@ -1,8 +1,10 @@
+require 'net/http'
 class Player
-  def initialize(name, deck)
+  def initialize(name, game_data)
     @name = name
-    @deck = deck
+    @deck = game_data[name]
     @collection = []
+    @game_id = game_data["id"]
   end
 
   def name
@@ -16,4 +18,5 @@ class Player
   def collection
     return @collection
   end
+
 end

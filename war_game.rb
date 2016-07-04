@@ -1,5 +1,4 @@
 require 'net/http'
-# puts Net::HTTP.get(uri) # => String
 require './player'
 require 'json'
 
@@ -9,15 +8,16 @@ class WarGame
     @game_data = create_new_game
 
     #create players with names and their deck
-    @player1 = create_player('player1', @game_data["data"]["one"])
-    @player2 = create_player('player2', @game_data["data"]["two"])
+    @player1 = create_player("one")
+    @player2 = create_player("two")
+
 
   end
 
   private
 
-  def create_player(name, deck)
-    return Player.new(name, deck)
+  def create_player(name)
+    return Player.new(name, @game_data["data"])
   end
 
   def create_new_game
