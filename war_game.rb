@@ -47,6 +47,3 @@ class WarGame
     end
   end
 end
-
-
-game = WarGame.new.play_game
