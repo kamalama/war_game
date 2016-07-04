@@ -19,4 +19,12 @@ class Player
     return @collection
   end
 
+  def play_card
+    #if @deck.empty? shuffle_collection
+    @deck.shift
+  end
+
+  def collect_cards(cards)
+    @collection.concat(cards)
+  end
 end
